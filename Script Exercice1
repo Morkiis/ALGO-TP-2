@@ -1,0 +1,41 @@
+
+create schema BANQUE;
+
+
+
+
+
+create table CLIENT ( NUMCOMPTE char (12) not null,
+
+                      NOM char (38) not null,
+
+                      ADRESSE char (60) not null,
+					  
+					  PRENOM char (20) not null,
+
+             primary key (NUMCOMPTE) )
+
+             
+
+create table COMPTE ( SOLDE decimal () not null,
+
+                      NUMCOMPTE char (12) not null,
+
+
+             primary key (NUMCOMPTE),
+
+                on delete no action on update cascade)
+
+				
+create table DATEDRCOMPTE ( DATEDEPOT date (),
+
+							MONTANTDEPOT decimal () ,
+
+							DATERETRAIT date(),
+							
+							MONTANTRETRAIT decimal (),
+
+							primary key (NUMCOMPTE),
+
+                on delete no action on update cascade)
+			

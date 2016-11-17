@@ -1,0 +1,54 @@
+
+create schema MAGASIN;
+
+
+
+
+
+create table CLIENT ( NUMCLIENT char (12) not null,
+
+                      NOM char (38) not null,
+
+                      ADRESSE char (60) not null,
+					  
+					  PRENOM char (20) not null,
+
+primary key (NUMCLIENT) )
+
+             
+
+create table PRODUIT ( REFERENCE char (15) not null,
+
+                      LIBELLE char (12) not null,
+					  
+					  PRIXUNITAIRE decimal () not null,
+
+primary key (REFERENCE),
+
+on delete no action on update cascade)
+
+				
+create table COMMANDE ( NUMCLIENT decimal ()  not null,
+
+						NUMCOMMANDE decimal () not null,,
+
+						DATECOMMANDE date() not null,
+							
+						ADRESSEDELIVRAISON char (12) not null,
+
+primary key (NUMCOMMANDE),
+		
+foreign key (NUMCLIENT) references CLIENT
+
+on delete no action on update cascade)
+				
+create table PRODUITPARCOMMANDE ( REFERENCE char (15) not null,
+
+								  QUANTITER char (12) not null,
+					  
+								  NUMCOMMANDE decimal () not null,
+
+primary key (REFERENCE),
+
+on delete no action on update cascade)
+			
